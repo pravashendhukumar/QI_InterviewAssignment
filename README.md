@@ -10,10 +10,9 @@ For assignment purpose all the test cases are created for [One Map](https://www.
 2. Support parallel execution of test cases.
 3. Generates test execution log file.
 4. Test execution can be triggered form command line.
-5. Easy integration to CI/CD pipeline like Jenkins.
-6. Framework uses Page Object Design Pattern, hence there is clean separation between test code and page specific code such as locators and layout.
-7. Supports re-run of failed test cases.
-8. Allows to control the tests to be run using sheet (Sanity/Regression) in TestData.xlsx sheet.
+5. Framework uses Page Object Design Pattern, hence there is clean separation between test code and page specific code such as locators and layout.
+6. Supports re-run of failed test cases.
+7. Allows to control the tests to be run using sheet (Sanity/Regression) in TestData.xlsx sheet.
 
 ## **Required Setup :**
 
