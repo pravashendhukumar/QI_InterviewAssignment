@@ -2,7 +2,7 @@
 # Overview:
 The QI_Interview assignment aims to automate selected scenarios of One Map, demonstrating proficiency in automation skills for interviews. This assignment employs a Data-Driven Framework utilizing the Page Object design pattern, which effectively segregates the test scripts' logic from the test data. This approach enables the creation of test automation scripts by leveraging various sets of test data. The test data sets are stored in external files or resources such as MS Excel Sheets. The test scripts access these external resources to retrieve the necessary test data. This framework offers significant advantages, notably reducing the number of test scripts required compared to a modular-based framework, especially when testing for multiple data sets concerning the same functionality.
 
-For the assignment, all test cases are designed specifically for the One Map website.
+For the assignment, all test cases are designed specifically for the One Map[https://www.onemap.gov.sg/] website.
 
 # Key Features of the Framework:
 * Report Generation: Generates detailed Extent and Allure reports, including step details.
