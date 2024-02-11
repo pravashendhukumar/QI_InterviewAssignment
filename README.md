@@ -45,7 +45,8 @@ Once the execution completes report will be generated in below folder structure.
 
 To generate and see the report from existing Allure results use below command.
 
-* allure serve
-it will generate and report and launched it in you local browser.
+allure serve
 
-* Execution Log: Logs generated at the time of test execution will be available at ./target/logs/automation.log
+it will generate and report and launched it in you local browser.
+**Execution Log:** 
+Logs generated at the time of test execution will be available at ./target/logs/automation.log
