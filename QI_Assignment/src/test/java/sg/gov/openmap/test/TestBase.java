@@ -6,6 +6,8 @@ import java.util.HashMap;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -30,19 +32,32 @@ public class TestBase implements GlobalVariables{
 		dir.clearFolder(SCREENSHOT_FOLDER);
 		dir.clearFolder(ALLURE_RESULTS);
 	}
-
+    
 	@BeforeMethod (alwaysRun = true)
 	public void setup(Method method) {
+		WebDriver driver = null;
+		String browserName=BROWSER_NAME;
+		switch (browserName.toLowerCase()) {
+        case "chrome":
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();  
 		ChromeOptions options = new ChromeOptions();  
 		options.setExperimentalOption("prefs", chromePrefs);  
 		options.addArguments("--remote-allow-origins=*");
+		//options.addArguments("--headless=new");
 		options.addArguments("--start-maximized");
 		options.setAcceptInsecureCerts(true);
-		WebDriver driver = new  ChromeDriver(options);
+		driver = new  ChromeDriver(options);
+		break;
+        case "firefox":        	
+        	driver = new FirefoxDriver();
+            break;
+        case "edge": driver=new EdgeDriver(); 
+            break;
+        
+		}
 		driver.get(BASE_URL);
-		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT);
+		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, EXPLICIT_WAIT);
 		DriverManager.getInstance().setDriver(driver);
 		ReportManager.startTest(method.getName());
