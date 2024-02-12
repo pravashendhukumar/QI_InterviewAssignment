@@ -12,8 +12,9 @@ For assignment purpose all the test cases are created for [One Map](https://www.
 4. Test execution can be triggered form command line.
 5. Framework uses Page Object Design Pattern, hence there is clean separation between test code and page specific code such as locators and layout.
 6. Supports re-run of failed test cases.
-7. Allows to control the tests to be run using sheet (Sanity/Regression) in TestData.xlsx sheet.
+7. Allows to control the tests to be run using sheet (Sanity) in TestData.xlsx sheet.
 8. Supports execution on Chrome,Firefox and Edge browser
+9. As it written on Java so its platfrom independent it can be run on any OS as windows,mac or linux (Code is developed and tested on Windows)
 
 ## **Required Setup :**
 
@@ -41,7 +42,7 @@ This will run 2 test cases in parallel (default thread count is 1).
 
 You can also change the execution sheet at run time by using set command as shown below. This will override the sheet value in config.properties file.
 
-set sheet=Sanity && mvn clean test -Dthreads=10
+set sheet=Sanity && mvn clean test -Dthreads=2
 
 Once the execution completes report will be generated in below folder structure.
 
