@@ -33,9 +33,9 @@ mvn clean test -Dthreads=10 - By default it execute tests on the chrome as under
 
 if want to execute test cases on other than chrome than run below Maven command
 
-For executed on Firefox --> mvn set browser=Firefox && clean test -Dthreads=2
+For executed on Firefox --> mvn set browser=Firefox && clean test -Dthreads=10
 
-For executed on Edge --> mvn set browser=edge && clean test -Dthreads=2
+For executed on Edge --> mvn set browser=edge && clean test -Dthreads=10
 
 This will run 10 test cases in parallel (default thread count is 1).
 
