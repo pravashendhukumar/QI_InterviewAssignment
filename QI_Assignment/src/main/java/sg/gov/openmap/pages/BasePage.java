@@ -15,11 +15,11 @@ import sg.gov.openmap.configs.GlobalVariables;
 
 public class BasePage implements GlobalVariables{
 
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected WebDriverWait wait;
 
 	public BasePage(WebDriver driver) {
-		this.driver = driver;
+		BasePage.driver = driver;
 		wait = new WebDriverWait(driver, EXPLICIT_WAIT);
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIME_OUT), this);
 	}
@@ -139,11 +139,16 @@ public class BasePage implements GlobalVariables{
 		driver.switchTo().window(handle);
 	}
 	
+	protected static void clickWithJavaScript(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+	
 	protected void clickAction(WebElement element) {
 		new Actions(driver).moveToElement(element).click().build().perform();
 	}
 	
-	protected String getOrderNumber(WebElement element) {
-		return element.getText().trim().replaceAll("[^0-9]", "");
+	protected void moveToTheElement(WebElement element) {
+		new Actions(driver).moveToElement(element).build().perform();
 	}
 }

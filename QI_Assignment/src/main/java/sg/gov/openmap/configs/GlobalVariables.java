@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public interface GlobalVariables {
 
+public interface GlobalVariables {
+    String BROWSER_NAME = System.getenv("browser") != null ? System.getenv("browser").trim().toLowerCase(): Config.getProperty("browser").toLowerCase();	//"Sanity";
 	String BASE_URL = Config.getProperty("url");	//"https://www.onemap.gov.sg/";
 	String NOT_APPLICABLE = "NA";
 	
@@ -41,6 +42,7 @@ public interface GlobalVariables {
 	
     List<String> TestData_topCenterMenus = new ArrayList<>(Arrays.asList("Community", "School Query", "Medical", "Hawker Centres"));
     List<String> TestData_FooterRightCornerLinks = new ArrayList<>(Arrays.asList("Contact Us", "Terms of Use", "Report Vulnerability"));
-
-
+    
+    List<String> TestData_SearchSubMenus = new ArrayList<>(Arrays.asList("Land Query", "Drone","Nearby","Map Styles","Shadow","Window View","More Services","About"));
+    List<String> TestData_SearchRouteMenus = new ArrayList<>(Arrays.asList("Transit", "Bus", "Car","Cycle","Walk"));
 }
