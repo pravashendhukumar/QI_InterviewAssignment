@@ -13,6 +13,7 @@ For assignment purpose all the test cases are created for [One Map](https://www.
 5. Framework uses Page Object Design Pattern, hence there is clean separation between test code and page specific code such as locators and layout.
 6. Supports re-run of failed test cases.
 7. Allows to control the tests to be run using sheet (Sanity/Regression) in TestData.xlsx sheet.
+8. Supports execution on Chrome,Firefox and Edge browser
 
 ## **Required Setup :**
 
@@ -24,13 +25,14 @@ For assignment purpose all the test cases are created for [One Map](https://www.
 ## **Running Test:**
 All the test to be executed can be configured in TestData.xlsx sheet placed in below path.<br><br>
 src\test\resources\data\TestData.xlsx<br><br>
-List all the tests to be executed in Sanity or Regression sheet. Update the config.properties file sheet parameter with sheet (Eg: Regression/Sanity) that needs to be executed.
 
 Open the command prompt and navigate to the folder in which pom.xml file is present.
 Run the below Maven command.
 
-mvn clean test -Dthreads=10
-
+mvn clean test -Dthreads=10 - By default it execute tests on the chrome as under config.properties browser is set as chrome
+if want to execute test cases on other than chrome than run below Maven command
+For executed on Firefox --> mvn set browser=Firefox && clean test -Dthreads=2
+For executed on Edge --> mvn set browser=edge && clean test -Dthreads=2
 This will run 10 test cases in parallel (default thread count is 1).
 
 You can also change the execution sheet at run time by using set command as shown below. This will override the sheet value in config.properties file.
