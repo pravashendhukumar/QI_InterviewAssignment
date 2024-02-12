@@ -29,15 +29,15 @@ src\test\resources\data\TestData.xlsx<br><br>
 Open the command prompt and navigate to the folder in which pom.xml file is present.
 Run the below Maven command.
 
-mvn clean test -Dthreads=10 - By default it execute tests on the chrome as under config.properties browser is set as chrome
+mvn clean test -Dthreads=2 - By default it execute tests on the chrome as under config.properties browser is set as chrome
 
 if want to execute test cases on other than chrome than run below Maven command
 
-For executed on Firefox --> mvn set browser=Firefox && clean test -Dthreads=10
+For executed on Firefox --> mvn set browser=Firefox && clean test -Dthreads=2
 
-For executed on Edge --> mvn set browser=edge && clean test -Dthreads=10
+For executed on Edge --> mvn set browser=edge && clean test -Dthreads=2
 
-This will run 10 test cases in parallel (default thread count is 1).
+This will run 2 test cases in parallel (default thread count is 1).
 
 You can also change the execution sheet at run time by using set command as shown below. This will override the sheet value in config.properties file.
 
